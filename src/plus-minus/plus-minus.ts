@@ -1,6 +1,6 @@
 const OUTPUT_PRECISION: number = 6;
 
-export default function plusMinus(arr: number[]): void {
+export default function plusMinus(arr: number[]): [string, string, string] {
   const numberOfLines: number = arr.length;
 
   let numberOfPositive: number = 0;
@@ -22,7 +22,9 @@ export default function plusMinus(arr: number[]): void {
   const ratioOfZeros = numberOfZeros / numberOfLines;
 
   // Output the ratios with the desired precision
-  console.log(ratioOfPositive.toPrecision(OUTPUT_PRECISION));
-  console.log(ratioOfNegative.toPrecision(OUTPUT_PRECISION));
-  console.log(ratioOfZeros.toPrecision(OUTPUT_PRECISION));
+  return [
+    ratioOfPositive.toPrecision(OUTPUT_PRECISION),
+    ratioOfNegative.toPrecision(OUTPUT_PRECISION),
+    ratioOfZeros.toPrecision(OUTPUT_PRECISION),
+  ];
 }
