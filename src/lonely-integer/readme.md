@@ -1,5 +1,7 @@
 # Lonely Integer
 
+https://www.hackerrank.com/challenges/one-week-preparation-kit-lonely-integer/problem
+
 Given an array of integers, where all elements but one occur twice, find the unique element.
 
 ## Example
