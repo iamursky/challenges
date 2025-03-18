@@ -4,13 +4,15 @@ export default function timeConversion(s: string): string {
 
   const [hours, minutes, seconds] = s.slice(0, -2).split(":").map(Number);
 
-  if (s.endsWith("AM")) {
-    return addLeadingZeros(hours, minutes, seconds);
+  if (s.endsWith("AM") && hours === 12) {
+    return addLeadingZeros(0, minutes, seconds);
   }
 
-  const formattedHours = Math.max(12, hours + 12);
+  if (s.endsWith("PM") && hours !== 12) {
+    return addLeadingZeros(hours + 12, minutes, seconds);
+  }
 
-  return addLeadingZeros(formattedHours, minutes, seconds);
+  return addLeadingZeros(hours, minutes, seconds);
 }
 
 function addLeadingZeros(hours: number, minutes: number, seconds: number): string {
