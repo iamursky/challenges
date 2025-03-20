@@ -1,4 +1,4 @@
-# Coding Challenges Solutions
+# Programming Problems
 
 ## Running Tests
 
